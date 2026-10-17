@@ -1,0 +1,42 @@
+BILDDETAILS 2.13.0 – RELEASE-PRÜFUNG
+
+48 unterschiedliche Funktionstests bestanden. Der Gesamtlauf vor dem letzten
+zusätzlichen GTK-Test umfasste 47 Tests in 40,923 Sekunden. Die vier GTK-
+Fotoshow-Tests einschließlich Zählung im pausierten Zustand und die drei
+Streaming-/Zähltests wurden danach erneut erfolgreich ausgeführt. Nach der
+Portabilisierung der Fixtures wurden zehn Fotoshow-Tests und drei Streaming-
+Tests erneut erfolgreich ausgeführt.
+
+NEUE PRÜFUNGEN
+- Gesamtzahl wird nach dem ersten Bild unabhängig von weiterer Navigation
+  ermittelt und in der pausierten GTK-Vorschau angezeigt.
+- Kein Zählerprozess vor dem expliziten, verzögerten Start; mehrfacher Start
+  erzeugt keinen zweiten Zähler. Bekannte Zahl bleibt beim Weiterblättern.
+- Testarchiv mit zwei kleinen Bildern und 600 MiB zusätzlichen Tar-Daten:
+  erster Frame ca. 0,04 s, Hintergrundzähler liefert zwei Bilder, kein Tar-
+  Puffer und weniger als 1 MiB Cache für diese kleinen Beispielbilder.
+- Cache-Fortschritt, Bereinigung, Zurück/Vor, Dauer, Pause, Schleife, unbekannte
+  und später bekannte Gesamtzahl sowie ursprüngliche Bildnamen geprüft.
+
+REGRESSIONEN
+XMP-Stichwörter tatsächlich schreiben/lesen/entfernen, Originalsicherung,
+RAW-Sidecars, Ziele und Dateikonflikte; Bilder und Theme; PDF/Text/Markdown;
+Office-Formate mit Seiten/Folien; GIMP-3-XCF samt nichtdestruktivem Filter;
+EPUB, Archivlisten, Medien und allgemeine Dateidetails. Quellen unverändert,
+außer bei ausdrücklich getesteter Metadaten-Speicherung.
+
+GIMP-RUNTIME
+GIMP 3.2.6 aus offizieller AppImage; festgelegte SHA256-Prüfsumme geprüft.
+Ältere API zusätzlich mit GIMP 3.0.8 getestet. Kein System-GIMP ersetzt.
+
+GRENZEN DER AUSSAGE
+Die 600 MiB bezeichnen die entpackte, stark komprimierbare Testgröße. Die
+Ladezeit echter Shows hängt von Bildern, Archivaufbau und Datenträger ab.
+Niedrige Prozesspriorität reduziert Konkurrenz; gleichzeitige Hintergrund-
+zählung erzeugt trotzdem zusätzliche Lese-/Dekompressionsarbeit.
+Keine Garantie einer unveränderten Ladezeit jedes Folgebildes unter jeder Last.
+
+VERÖFFENTLICHUNGSSTAND
+Nur Quellcode, synthetische Fixtures und Dokumentation; Runtime/Artefakte und
+Caches von Git ausgeschlossen. Keine persönlichen Verzeichnisse oder echte
+Benutzerbilder als Testdaten. GPL-3.0-or-later; neutrale Git-Projektidentität.

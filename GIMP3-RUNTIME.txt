@@ -1,0 +1,21 @@
+Mitgelieferte GIMP-Runtime: 3.2.6 für x86-64, offizielle AppImage entpackt.
+Originaldatei: GIMP-3.2.6-x86_64.AppImage
+Bezugsquelle: https://download.gimp.org/gimp/v3.2/linux/
+SHA256: 79ea41bc9b06f78fda181849a9ca8e42d83f1124dedb756f4d52352e2465010f
+Die Prüfsumme wurde vor dem Entpacken mit der offiziellen SHA256SUMS verglichen.
+
+GIMP ist freie Software unter GNU GPL Version 3 oder später; siehe beigelegte
+GIMP-GPL-3.txt. Copyright des GIMP-Teams und der jeweiligen Mitwirkenden.
+Die Runtime enthält zusätzlich Bibliotheken unter deren eigenen Lizenzen.
+Original-Runtime vollständig übernommen; hinzugefügt wurde nur der Wrapper
+bilddetails-console, der anhand des AppRun-Skripts den Konsolenprozess startet.
+Keine FUSE-Abhängigkeit, keine Änderung des systemweit installierten GIMP.
+
+GIMP-Quellen dieser Version:
+https://download.gimp.org/gimp/v3.2/gimp-3.2.6.tar.xz
+Quellcode/Buildskripte und Angaben zur AppImage-Erstellung:
+https://gitlab.gnome.org/GNOME/gimp/-/tree/GIMP_3_2_6/build/linux/appimage
+https://gitlab.gnome.org/GNOME/gimp/-/blob/GIMP_3_2_6/build/linux/flatpak/org.gimp.GIMP-nightly.json.in
+Die Upstream-Runtime ist unverändert auch unter obiger Bezugsquelle verfügbar.
+Der Bilddetails-Quellcode enthält fetch-gimp3-runtime.sh zum reproduzierbaren
+Herunterladen, Prüfen und Entpacken genau dieser Runtime.

@@ -1,0 +1,112 @@
+DATEIVORSCHAU 2.13.0 – FORMATÜBERSICHT
+
+Die Vorschau befindet sich rechts in Nemo. Breite per Trenner, Sichtbarkeit
+per Symbol. Das Öffnen-Symbol startet bei Bedarf die zuständige Anwendung.
+
+OFFICE / PDF – ZOOM UND SEITEN- BZW. FOLIENWECHSEL
+Textdokumente und Vorlagen:
+  DOC, DOCM, DOCX, DOT, DOTM, DOTX, FODT, ODT, OTT, RTF
+Tabellen und Vorlagen:
+  FODS, ODS, OTS, XLS, XLSB, XLSM, XLSX, XLT, XLTM, XLTX
+Präsentationen, Diashows und Vorlagen:
+  FODP, ODP, OTP, POT, POTM, POTX, PPS, PPSM, PPSX, PPT, PPTM, PPTX
+Zeichnungen / Visio-Import:
+  FODG, ODG, OTG, VSD, VSDX
+Formeln:
+  MML, ODF
+
+Office-Inhalte werden über einen separaten LibreOffice-Prozess als temporäre
+PDF-Seiten gezeigt. Keine Bearbeitung der Office-Datei, keine Makroausführung.
+Präsentationen sind statisch: keine Animationen, Übergänge oder Medienwiedergabe.
+Schriftarten und Importfilter können die Darstellung beeinflussen. Visio und
+seltene/makrofähige Varianten sind von der installierten LibreOffice-Version
+abhängig; nicht jede Variante wurde mit einer eigenen Beispieldatei geprüft.
+Tabellen verwenden ihre Druckbereiche/Seiteneinstellungen. PDF: auch direkt.
+
+BILDER
+JPEG, PNG, TIFF, WebP, GIF, BMP, SVG und weitere installierte GdkPixbuf-Bildlader.
+HEIC/HEIF, AVIF und JXL benötigen einen passenden System-Bildlader.
+Kamera-RAWs: vorhandenes eingebettetes JPEG, kein vollständiger RAW-Konverter.
+Animierte Bilder: statisches Bild. Metadaten-Eingabefelder nur bei Bildern.
+
+TEXT UND E-BOOKS
+TXT, LOG, Markdown, CSV/TSV, JSON, XML, HTML-Quelltext, Quellcode, Konfigurationen
+und erkennbare Textdateien ohne Endung. HTML/Code wird nicht ausgeführt.
+EPUB: lesbarer Kapiteltext in Buchreihenfolge; keine E-Book-Bearbeitung, kein DRM.
+Schriftgröße +/−. Begrenzte Textlänge; Hinweise bei Kürzung. Kein MOBI/AZW-Import.
+
+ARCHIVE
+ZIP, TAR, TAR.GZ/TGZ, TAR.BZ2/TBZ2, TAR.XZ/TXZ, 7Z und von libarchive lesbare RAR.
+Nur Inhaltsliste, keine Extraktion. Maximal 2000 Einträge / etwa 1 MiB Auflistung.
+GZ/BZ2/XZ mit einfachem Text: begrenzte Textvorschau. Verschlüsselte Inhalte
+werden nicht entschlüsselt. ZIP/TAR/7Z und komprimierter Text praktisch geprüft.
+
+AUDIO
+AAC, AIF, AIFF, FLAC, M4A, MP3, OGA, OGG, OPUS, WAV, WMA
+Anzeige von Dauer, Codec, Tags und technischen Angaben; Wiedergabe über Öffnen.
+
+VIDEO
+3GP, AVI, M2TS, M4V, MKV, MOV, MP4, MPEG, MPG, MTS, OGV, TS, WEBM, WMV
+Standbild, Dauer und technische Angaben; Zoom. Wiedergabe über Öffnen.
+Keine automatische Wiedergabe, kein Ton und keine externen Netzwerkstreams.
+Audio-/Video-Codecs müssen von FFmpeg unterstützt werden.
+
+WEITERE DATEIEN
+Unbekannte Binärformate: Dateityp, Größe und Änderungszeit. Kein Ausführen.
+Kein universeller CAD-/3D-, Datenbank- oder Spezialformat-Renderer.
+
+GRENZEN
+Office: 64 MiB Quelldatei, 100 MiB PDF, 60 Sekunden Konvertierungszeit.
+Bildvorschau: maximal 1920 Pixel, PDF-Seiten: 1600 Pixel Kantenlänge.
+Video-Standbild bis 1280×720. Zoom vergrößert diese Vorschau; für volle
+Originalauflösung die Datei über das Öffnen-Symbol öffnen.
+Text/EPUB: etwa 1 MiB; sehr lange Textzeilen werden gekürzt.
+Passwort-/DRM-geschützte, beschädigte oder decoderseitig nicht unterstützte
+Dateien liefern einen Hinweis statt einer Inhaltsvorschau.
+
+SYSTEM
+LibreOffice Writer/Calc/Impress/Draw/Math und python3-uno, Poppler, FFmpeg,
+libarchive-tools, GTK 3 und ExifTool. apt löst die Paketabhängigkeiten auf.
+Keine systemweite Installation durch den Paketbau selbst.
+
+Getestete neue Office-Vertreter: PPT, PPTX, ODP, PPSX, POTX, OTP, FODP, PPTM,
+ODG, OTG, FODG, ODF, OTT, FODT, DOTX, RTF, ODS, OTS, FODS und XLTX.
+Bereits vorher geprüft: DOC, DOCX, ODT, XLS und XLSX.
+
+XCF / GIMP
+Zusammengesetzte sichtbare Ebenen über den mitgelieferten GIMP-3.2.6-Decoder,
+auch nichtdestruktive Filter kompatibler XCF-Versionen. Keine Ebenenbearbeitung.
+Vorschau bis 1920 Pixel. XCF-Konvertierung bis 256 MiB und 40 Megapixel,
+20 Sekunden; eigener Plattencache 24 PNGs / 128 MiB. Künftige, noch nicht
+vom Decoder unterstützte XCF-Varianten sind nicht pauschal abgedeckt.
+
+FOTOSHOW STUDIO .run
+Gzip-Makeself-Archive mit regulären PNG-, JPEG/JPG/JPE-, WEBP-, GIF-, BMP-
+oder TIFF-Bildern, auch ursprüngliche Namen und Unterordner. Die .run-Datei
+wird nie ausgeführt. Bildwechsel, Nummernfeld, Zoom, Start/Pause, Dauer
+0,5–60 Sekunden, Schleife. Keine Originalmusik, Übergänge oder Videoclips.
+Große Shows werden bei Bedarf gelesen; 64 Vorschauen / 128 MiB pro Leser,
+maximal zwei Shows. Zusätzlich gemeinsamer RAM-Cache. Einzelbild maximal
+64 MiB und 20 Sekunden Ladezeit. Bei kleinen Indizes maximal 512 MiB Tar;
+große Shows streamen ohne diese Gesamtgrenze. Große Shows in Archiv-
+Reihenfolge, kleine natürlich sortiert. Hintergrundzählung nach erstem Bild,
+auch im pausierten Zustand; nach fünf Minuten ggf. weiterhin unbekannte Zahl.
+MPEG-TS-Video .ts wird anhand des Headers von TypeScript-Text unterschieden.
+
+FORMATIERTER TEXT
+Einfache Markdown-Leseansicht, Syntaxfarben bei Quelltext und Konfiguration.
+Maximal 128 Ki Zeichen und 2000 Markierungen, darüber schnelle Rohtextansicht.
+Keine HTML-Ausführung oder externe Markdown-Bilder. Keine vollständige
+Markdown-Tabellen-/Browserdarstellung. Textzoom verändert die Schriftgröße.
+
+BILDMETADATEN
+Kamera, Objektiv, Aufnahme, Urheber/Hersteller und XMP-Stichwörter bearbeitbar;
+Stichwörter mit Semikolon trennen. JPEG, PNG, TIFF und WEBP direkt mit
+Originalsicherung, andere unterstützte Bilder über XMP-Begleitdateien.
+Diese Eingabefelder erscheinen nur bei Bildern, nicht bei XCF oder Shows.
+
+GESCHWINDIGKEIT UND DATEIDETAILS
+100-ms-Auswahlprüfung, 90-ms-Auswahlverzögerung, Hintergrundladen. Gemeinsamer
+RAM-Cache: 24 Vorschauen / ca. 96 MiB Inhalt, kein Gesamt-RAM-Limit.
+Office-Konverter wird wiederverwendet, bis zu drei temporäre Office-PDFs.
+Dateidetails ausklappbar: Name, Erweiterung, Größe, Änderung, Rechte und Pfad.
