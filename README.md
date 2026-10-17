@@ -35,7 +35,7 @@ enthaltenen Runtime deutlich größer als der Quellcode.
 ## Tests
 
 Benötigt werden die Paketabhängigkeiten und zusätzlich `imagemagick`,
-`makeself` sowie ein GTK-Display. Bei installiertem Fotoshow Studio wird dessen
+`makeself`, `gimp-console-2.10` für die Legacy-XCF-Fixtures sowie ein GTK-Display. Bei installiertem Fotoshow Studio wird dessen
 Generator optional im Integrationstest verwendet; sonst stehen eigenständige
 Makeself-Fixtures bereit. Beispiel für eine isolierte Sitzung:
 
