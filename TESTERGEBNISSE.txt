@@ -1,4 +1,4 @@
-BILDDETAILS 2.13.0 – RELEASE-PRÜFUNG
+NEMO DATEIVORSCHAU PLUS 2.13.0 – RELEASE-PRÜFUNG
 
 48 unterschiedliche Funktionstests bestanden. Der Gesamtlauf vor dem letzten
 zusätzlichen GTK-Test umfasste 47 Tests in 40,923 Sekunden. Die vier GTK-
@@ -40,3 +40,10 @@ VERÖFFENTLICHUNGSSTAND
 Nur Quellcode, synthetische Fixtures und Dokumentation; Runtime/Artefakte und
 Caches von Git ausgeschlossen. Keine persönlichen Verzeichnisse oder echte
 Benutzerbilder als Testdaten. GPL-3.0-or-later; neutrale Git-Projektidentität.
+
+VERÖFFENTLICHUNG ALS NEMO DATEIVORSCHAU PLUS
+Paketname, Bibliothekspfad, Desktop-Eintrag und Metadaten-Aufruf umbenannt.
+apt-Simulation bestätigt: altes Paket bilddetails wird durch das neue Paket
+ersetzt. Einstellungs-/Cachepfade bleiben kompatibel, CLI-Alias erhalten.
+Die vollständige Testsuite wurde unter dem neuen Projektnamen erneut geprüft.
+Desktop-Eintrag formal validiert; CLI meldet den neuen Namen und Version 2.13.0.

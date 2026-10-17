@@ -93,7 +93,7 @@ class Preview(Gtk.Box):
         self.text_points = 11
         self.zoom = 0  # Fit mode, then multiples of decoded preview size.
         self.options = settings()
-        self.expander = Gtk.Expander(label='Dateivorschau' if sidebar else 'Bilddetails – Dateivorschau')
+        self.expander = Gtk.Expander(label='Dateivorschau' if sidebar else 'Nemo Dateivorschau Plus')
         self.pack_start(self.expander, True, True, 0)
         body = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=4)
         self.expander.add(body)
@@ -524,7 +524,7 @@ class Preview(Gtk.Box):
 
     def open_editor(self, *_):
         if self.path:
-            subprocess.Popen(['/usr/bin/bilddetails', str(self.path)], start_new_session=True)
+            subprocess.Popen(['/usr/bin/nemo-dateivorschau-plus', str(self.path)], start_new_session=True)
 
     def cleanup(self, *_):
         self.stop_count_watch()
@@ -539,7 +539,7 @@ class Preview(Gtk.Box):
 
 class PreviewWindow(Gtk.Window):
     def __init__(self):
-        super().__init__(title='Bilddetails – Dateivorschau')
+        super().__init__(title='Nemo Dateivorschau Plus')
         self.set_default_size(1000, 760)
         self.preview = Preview(standalone=True)
         self.add(self.preview)

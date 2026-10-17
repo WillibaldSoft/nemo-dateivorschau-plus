@@ -2,6 +2,10 @@
 
 ## 2.13.0
 
+Veröffentlicht als Nemo Dateivorschau Plus, Nachfolger von Bilddetails.
+Paketwechsel über Conflicts/Replaces; bisherige Einstellungen und CLI-Alias
+bleiben erhalten.
+
 Die Gesamtzahl großer Fotoshow-Archive wird 0,5 Sekunden nach dem ersten
 angezeigten Bild unabhängig und mit niedriger Prozesspriorität gezählt.
 Die Anzeige aktualisiert sich auch bei Pause. Der Zähler dekodiert keine

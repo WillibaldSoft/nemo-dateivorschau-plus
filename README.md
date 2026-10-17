@@ -1,4 +1,6 @@
-# Bilddetails für Nemo
+# Nemo Dateivorschau Plus
+
+Früher **Bilddetails**, jetzt **Nemo Dateivorschau Plus**.
 
 Rechte, verstellbare Dateivorschau mit Zoom, PDF-/Office-Seitenwechsel,
 XCF-Unterstützung über einen separaten GIMP-3-Decoder und Bildmetadateneditor.
@@ -9,7 +11,7 @@ Bild unabhängig im Hintergrund ermittelt.
 ## Installation
 
 ```sh
-sudo apt install ./bilddetails_2.13.0_amd64.deb
+sudo apt install ./nemo-dateivorschau-plus_2.13.0_amd64.deb
 nemo -q
 ```
 
@@ -64,10 +66,17 @@ git push -u origin main --follow-tags
 ```
 
 Pakete und Prüfsummen als Release-Anhänge hochladen, nicht in die Git-Historie.
-Es wird durch diese Vorbereitung nichts auf einen Server hochgeladen.
+Die Veröffentlichung erfolgt unter `WillibaldSoft/nemo-dateivorschau-plus`.
 
 ## Lizenz
 
 GPL-3.0-or-later, siehe [LICENSE](LICENSE). Für die unverändert übernommene
 GIMP-Runtime und enthaltene Bibliotheken gelten ihre jeweiligen Lizenzen.
 Bezugsquellen und Prüfsummen: [GIMP3-RUNTIME.txt](GIMP3-RUNTIME.txt).
+
+## Umstieg von Bilddetails
+
+Das neue Paket ersetzt `bilddetails` über die Paketverwaltung. Die bisherigen
+Einstellungen und Caches unter dem alten internen Namen bleiben verwendbar.
+Der Befehl `bilddetails` bleibt als Kompatibilitätsalias erhalten. Nach dem
+Update Nemo vollständig neu starten.

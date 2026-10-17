@@ -15,7 +15,11 @@ GIMP-Quellen dieser Version:
 https://download.gimp.org/gimp/v3.2/gimp-3.2.6.tar.xz
 Quellcode/Buildskripte und Angaben zur AppImage-Erstellung:
 https://gitlab.gnome.org/GNOME/gimp/-/tree/GIMP_3_2_6/build/linux/appimage
-https://gitlab.gnome.org/GNOME/gimp/-/blob/GIMP_3_2_6/build/linux/flatpak/org.gimp.GIMP-nightly.json.in
+https://gitlab.gnome.org/GNOME/gimp/-/blob/GIMP_3_2_6/build/linux/flatpak/org.gimp.GIMP-nightly.json
 Die Upstream-Runtime ist unverändert auch unter obiger Bezugsquelle verfügbar.
 Der Bilddetails-Quellcode enthält fetch-gimp3-runtime.sh zum reproduzierbaren
 Herunterladen, Prüfen und Entpacken genau dieser Runtime.
+
+Zusätzlich überprüfte offizielle GNOME-GitHub-Spiegel:
+https://github.com/GNOME/gimp/tree/GIMP_3_2_6/build/linux/appimage
+https://github.com/GNOME/gimp/blob/GIMP_3_2_6/build/linux/flatpak/org.gimp.GIMP-nightly.json

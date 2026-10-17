@@ -1,9 +1,9 @@
-BILDDETAILS 2.13.0 – Nemo-Dateivorschau und Bildmetadateneditor
+NEMO DATEIVORSCHAU PLUS 2.13.0 – Nemo-Dateivorschau und Bildmetadateneditor
 
 INSTALLATION (AMD64 / Linux Mint Cinnamon, Ubuntu/Debian mit Nemo)
-    sudo apt install ./bilddetails_2.13.0_amd64.deb
+    sudo apt install ./nemo-dateivorschau-plus_2.13.0_amd64.deb
 Alternativ Installationshelfer neben dem Paket speichern und ausführen:
-    sh Bilddetails-2.13-installieren.sh
+    sh Nemo-Dateivorschau-Plus-2.13-installieren.sh
 Nur Abhängigkeiten prüfen: gleicher Aufruf mit --check.
 Nach Abschluss offener Dateioperationen Nemo mit nemo -q beenden und erneut
 öffnen. Ältere Bilddetails-Versionen werden aktualisiert.
@@ -59,10 +59,15 @@ XCF: eigener Plattencache 24 PNGs / 128 MiB; Bilder bis 1920 Pixel, PDF-Seiten
 bis 1600 Pixel. Volle Originalauflösung in der zuständigen Anwendung öffnen.
 
 CLI
-    bilddetails --settings
-    bilddetails --formats
-    bilddetails --version
+    nemo-dateivorschau-plus --settings
+    nemo-dateivorschau-plus --formats
+    nemo-dateivorschau-plus --version
 
 LIZENZ
 Projektquellcode: GPL-3.0-or-later, siehe LICENSE. Mitgelieferte GIMP-Runtime
 und Bibliotheken unter ihren jeweiligen Lizenzen; siehe GIMP3-RUNTIME.txt.
+
+UMBENENNUNG
+Nemo Dateivorschau Plus ist der Nachfolger von Bilddetails. Das Paket ersetzt
+bilddetails automatisch. Einstellungen/Cache unter dem alten internen Namen
+bleiben erhalten. Der Befehl bilddetails ist ein Kompatibilitätsalias.

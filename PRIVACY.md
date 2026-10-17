@@ -3,8 +3,7 @@
 Der veröffentlichungsfähige Stand enthält ausschließlich Programmquellcode,
 Dokumentation und synthetische Testfixtures. Persönliche Dateipfade,
 Benutzernamen, Chatverläufe, Kontodaten, Zugangsdaten, Cache-Dateien und echte
-Benutzerfotos gehören nicht in dieses Repository. Die Git-Identität lautet
-neutral `Bilddetails Paketpflege <bilddetails@localhost>`.
+Benutzerfotos gehören nicht in dieses Repository. Git-Identitäten sind neutrale Projektbezeichnungen mit `@localhost`-Adressen.
 
 Bilddetails enthält keine Telemetrie oder Upload-Funktion. Es liest lokal
 ausgewählte Dateien. Metadatenänderungen entstehen erst durch Speichern.

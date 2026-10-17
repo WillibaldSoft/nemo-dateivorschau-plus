@@ -1,9 +1,9 @@
 #!/bin/sh
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Keep this file beside bilddetails_2.13.0_amd64.deb.
+# Keep this file beside nemo-dateivorschau-plus_2.13.0_amd64.deb.
 set -eu
 installer_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
-installer_deb="$installer_dir/bilddetails_2.13.0_amd64.deb"
+installer_deb="$installer_dir/nemo-dateivorschau-plus_2.13.0_amd64.deb"
 if ! command -v apt-get >/dev/null 2>&1; then
     echo 'Dieser Installer benötigt Debian/Ubuntu/Linux Mint mit apt-get.' >&2
     exit 1

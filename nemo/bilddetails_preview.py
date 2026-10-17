@@ -6,7 +6,7 @@ import gi
 gi.require_version('Nemo', '3.0')
 gi.require_version('Gtk', '3.0')
 from gi.repository import GObject, Nemo, Gtk, GLib
-sys.path.insert(0, '/usr/lib/bilddetails')
+sys.path.insert(0, '/usr/lib/nemo-dateivorschau-plus')
 from nemo_sidebar import WindowState
 
 class BilddetailsPreview(GObject.GObject, Nemo.LocationWidgetProvider):

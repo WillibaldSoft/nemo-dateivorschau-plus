@@ -12,7 +12,7 @@ from editor import FIELDS, DIRECT, argument_path, load, save
 
 class Window(Gtk.Window):
     def __init__(self, paths):
-        super().__init__(title='Bilddetails – Anzeigen und Bearbeiten')
+        super().__init__(title='Nemo Dateivorschau Plus – Bilddetails')
         self.set_default_size(1050, 800)
         self.pool = concurrent.futures.ThreadPoolExecutor(max_workers=1)
         self.paths, self.path, self.original = [], None, []
@@ -213,17 +213,17 @@ class Window(Gtk.Window):
 
 def main():
     if '--version' in sys.argv:
-        print('Bilddetails 2.13.0')
+        print('Nemo Dateivorschau Plus 2.13.0')
         return
     if '--formats' in sys.argv:
-        candidates = [Path(__file__).resolve().parent.parent / 'FORMATE.txt', Path('/usr/share/doc/bilddetails/FORMATE.txt')]
+        candidates = [Path(__file__).resolve().parent.parent / 'FORMATE.txt', Path('/usr/share/doc/nemo-dateivorschau-plus/FORMATE.txt')]
         print(next((path.read_text() for path in candidates if path.is_file()), 'Formatübersicht nicht gefunden.'))
         return
     if '--help' in sys.argv or '-h' in sys.argv:
-        print('Aufruf: bilddetails [DATEI oder file://URI …]\nOhne Argumente öffnet sich die Bildauswahl. --formats zeigt die Formatübersicht. --settings öffnet die Vorschau-Einstellungen. Version: 2.13.0')
+        print('Aufruf: nemo-dateivorschau-plus [DATEI oder file://URI …]\nOhne Argumente öffnet sich die Bildauswahl. --formats zeigt die Formatübersicht. --settings öffnet die Vorschau-Einstellungen. Version: 2.13.0')
         return
     if not Gtk.init_check()[0]:
-        print('Bilddetails benötigt eine grafische Desktop-Sitzung (GTK 3).', file=sys.stderr)
+        print('Nemo Dateivorschau Plus benötigt eine grafische Desktop-Sitzung (GTK 3).', file=sys.stderr)
         sys.exit(1)
     if '--settings' in sys.argv:
         from preferences import show_preferences

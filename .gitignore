@@ -17,3 +17,6 @@ work/
 *.key
 id_rsa*
 id_ed25519*
+.git-credentials
+.netrc
+.config/gh/
