@@ -99,7 +99,7 @@ class Preview(Gtk.Box):
         self.expander.add(body)
         bar = Gtk.Box(spacing=6)
         body.pack_start(bar, False, False, 0)
-        self.name = Gtk.Label(label='Eine Datei in Nemo auswählen.', xalign=0, ellipsize=3)
+        self.name = Gtk.Label(label='Eine Datei im Dateimanager auswählen.', xalign=0, ellipsize=3)
         self.name.set_hexpand(True)
         body.reorder_child(bar, 0)
         body.pack_start(self.name, False, False, 0)
@@ -276,7 +276,7 @@ class Preview(Gtk.Box):
         self.pixbuf = None
         self.pending = None
         self.zoom = 0
-        self.name.set_text(path.name + (f' ({count} ausgewählt)' if count > 1 else '') if path else 'Eine Datei in Nemo auswählen.')
+        self.name.set_text(path.name + (f' ({count} ausgewählt)' if count > 1 else '') if path else 'Eine Datei im Dateimanager auswählen.')
         self.name.set_tooltip_text(str(path) if path else '')
         self.redraw()
         if self.timer:

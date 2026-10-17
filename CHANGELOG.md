@@ -1,5 +1,15 @@
 # Änderungen
 
+## 2.14.0
+
+Zusätzliche rechte Vorschauleiste in Thunar mit gemeinsamem Decoder, Cache und
+Metadateneditor. Breitenanpassung, Symbol zum Ein-/Ausblenden, Startverhalten,
+separates Fenster, Zoom und Navigation wie in Nemo. Auswahl folgt Symbol-,
+Listen- und Kompaktansicht, Tabs und Fokus in geteilten Ansichten.
+Kleiner Thunarx-Loader mit sicherer Python-Symbolauflösung; native Auswahl über
+GList statt ATK (ExoIconView bietet hier keine ATK-Auswahlschnittstelle).
+Kein zusätzliches thunarx-python nötig. Vorhandene Dateimanager bleiben erhalten.
+
 ## 2.13.0
 
 Veröffentlicht als Nemo Dateivorschau Plus, Nachfolger von Bilddetails.

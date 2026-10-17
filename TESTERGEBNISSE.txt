@@ -1,3 +1,28 @@
+NEMO DATEIVORSCHAU PLUS 2.14.0 – PRÜFUNG
+
+48 bestehende Funktionstests in 43,330 Sekunden vollständig bestanden.
+Zusätzlich eigener Integrationstest in echtem Thunar 4.18.8 bestanden:
+- Dynamisches Laden über residenten Thunarx-Loader, asynchrones Bilddekodieren.
+- Native Auswahl in Symbol-, Listen- und Kompaktansicht.
+- Tabs und Fokuswechsel innerhalb geteilter Ansichten.
+- Bild- und Textwechsel; bearbeitbare Bilddetails nur bei Bildern.
+- Zweiseitige PDF: Laden, Seitenwechsel und Zoom.
+- Werkzeugleisten-Symbol, Ein-/Ausblenden, separater Viewer und Breitenänderung.
+- Eigenes temporäres Profil, privater D-Bus und GTK-Broadway-Testdisplay;
+  keine Installation und keine Veränderung vorhandener Thunar-Fenster.
+
+Die gemeinsame Vorschau wurde mit allen bisherigen Dokumenten-, Office-,
+Metadaten-, GIMP-/XCF-, Medien- und Fotoshow-/Cachetests geprüft. Das erste
+Bild der synthetischen 600-MiB-Show wurde nach ca. 0,040 Sekunden geladen.
+Dies ist keine Geschwindigkeitsgarantie für echte Archive/Datenträger.
+
+Thunar 4.20 ist als GTK3-Fensteraufbau vorgesehen, hier jedoch nicht als
+Laufzeit getestet. Unbekannte Aufbauten werden unverändert gelassen.
+Während des isolierten Tests meldeten Thunar/GTK und der externe Thumbnailer
+Diagnosewarnungen; die Funktionsprüfungen einschließlich Schließen bestanden.
+
+VORHERIGE RELEASE-PRÜFUNG (2.13.0)
+
 NEMO DATEIVORSCHAU PLUS 2.13.0 – RELEASE-PRÜFUNG
 
 48 unterschiedliche Funktionstests bestanden. Der Gesamtlauf vor dem letzten

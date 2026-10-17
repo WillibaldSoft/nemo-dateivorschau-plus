@@ -1,9 +1,9 @@
 #!/bin/sh
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Keep this file beside nemo-dateivorschau-plus_2.13.0_amd64.deb.
+# Keep this file beside nemo-dateivorschau-plus_2.14.0_amd64.deb.
 set -eu
 installer_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
-installer_deb="$installer_dir/nemo-dateivorschau-plus_2.13.0_amd64.deb"
+installer_deb="$installer_dir/nemo-dateivorschau-plus_2.14.0_amd64.deb"
 if ! command -v apt-get >/dev/null 2>&1; then
     echo 'Dieser Installer benötigt Debian/Ubuntu/Linux Mint mit apt-get.' >&2
     exit 1
@@ -22,4 +22,4 @@ if [ "$(id -u)" -eq 0 ]; then
 else
     sudo apt-get install "$installer_deb"
 fi
-echo 'Fertig. Nemo nach dem Schließen offener Dateivorgänge mit nemo -q beenden und erneut öffnen.'
+echo 'Fertig. Nemo bzw. Thunar nach dem Schließen offener Dateivorgänge mit nemo -q bzw. thunar -q beenden und erneut öffnen.'

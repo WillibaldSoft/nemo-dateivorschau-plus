@@ -16,14 +16,14 @@ class Preferences(Gtk.Dialog):
         self.add_buttons('Abbrechen', Gtk.ResponseType.CANCEL, 'Speichern', Gtk.ResponseType.OK)
         box = self.get_content_area()
         box.set_border_width(16); box.set_spacing(10)
-        box.pack_start(Gtk.Label(label='Vorschau beim Öffnen eines Nemo-Fensters:', xalign=0), False, False, 0)
+        box.pack_start(Gtk.Label(label='Vorschau beim Öffnen eines Nemo-/Thunar-Fensters:', xalign=0), False, False, 0)
         self.startup = Gtk.ComboBoxText()
         for key, label in [('shown', 'Immer eingeblendet'), ('hidden', 'Immer ausgeblendet'),
                            ('last', 'Letzten Zustand wiederherstellen')]:
             self.startup.append(key, label)
         self.startup.set_active_id(settings()['startup'])
         box.pack_start(self.startup, False, False, 0)
-        box.pack_start(Gtk.Label(label='Gilt für neue Fenster und nach einem Nemo-Neustart.\nDas Vorschau-Symbol schaltet das aktuelle Fenster um.', xalign=0), False, False, 0)
+        box.pack_start(Gtk.Label(label='Gilt für neue Fenster und nach einem Dateimanager-Neustart.\nDas Vorschau-Symbol schaltet das aktuelle Fenster um.', xalign=0), False, False, 0)
         self.show_all()
 
     def save(self):

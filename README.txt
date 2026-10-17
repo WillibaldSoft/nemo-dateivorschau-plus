@@ -1,12 +1,12 @@
-NEMO DATEIVORSCHAU PLUS 2.13.0 – Nemo-Dateivorschau und Bildmetadateneditor
+NEMO DATEIVORSCHAU PLUS 2.14.0 – Nemo-/Thunar-Dateivorschau und Bildmetadateneditor
 
-INSTALLATION (AMD64 / Linux Mint Cinnamon, Ubuntu/Debian mit Nemo)
-    sudo apt install ./nemo-dateivorschau-plus_2.13.0_amd64.deb
+INSTALLATION (AMD64 / Linux Mint Cinnamon, Ubuntu/Debian mit Nemo oder Thunar)
+    sudo apt install ./nemo-dateivorschau-plus_2.14.0_amd64.deb
 Alternativ Installationshelfer neben dem Paket speichern und ausführen:
-    sh Nemo-Dateivorschau-Plus-2.13-installieren.sh
+    sh Nemo-Dateivorschau-Plus-2.14-installieren.sh
 Nur Abhängigkeiten prüfen: gleicher Aufruf mit --check.
 Nach Abschluss offener Dateioperationen Nemo mit nemo -q beenden und erneut
-öffnen. Ältere Bilddetails-Versionen werden aktualisiert.
+öffnen. Bei Thunar stattdessen thunar -q verwenden und Thunar neu öffnen. Ältere Bilddetails-Versionen werden aktualisiert.
 
 BEDIENUNG
 Vorschau rechts neben der Dateiliste. Breite am Trenner ziehen; Vorschau am
@@ -71,3 +71,12 @@ UMBENENNUNG
 Nemo Dateivorschau Plus ist der Nachfolger von Bilddetails. Das Paket ersetzt
 bilddetails automatisch. Einstellungen/Cache unter dem alten internen Namen
 bleiben erhalten. Der Befehl bilddetails ist ein Kompatibilitätsalias.
+
+THUNAR
+Zusätzliche Integration in Thunar (GTK3), direkt getestet mit 4.18.8.
+Gleiche Formate, Zoom, Seitenwechsel, Fotoshow, Cache und Bildmetadaten wie Nemo.
+Auswahl folgt auch in Tabs und geteilten Ansichten. Werkzeugleiste: eigenes
+Vorschau-Symbol und Einstellungen. Breite am rechten Trenner verstellen.
+Lokale Dateien; unbekannte Fensteraufbauten werden nicht verändert.
+Thunars eigene einfache Bildvorschau lässt sich im Ansicht-Menü abschalten.
+Die gemeinsamen Start-/Breiteneinstellungen gelten für Nemo und Thunar.

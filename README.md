@@ -2,7 +2,7 @@
 
 Früher **Bilddetails**, jetzt **Nemo Dateivorschau Plus**.
 
-Rechte, verstellbare Dateivorschau mit Zoom, PDF-/Office-Seitenwechsel,
+Rechte, verstellbare Dateivorschau für **Nemo und Thunar** mit Zoom, PDF-/Office-Seitenwechsel,
 XCF-Unterstützung über einen separaten GIMP-3-Decoder und Bildmetadateneditor.
 Fotoshow-Studio-Archive lassen sich durchblättern und mit Start/Pause abspielen.
 Große Shows werden schrittweise geladen; die Gesamtzahl wird nach dem ersten
@@ -11,17 +11,20 @@ Bild unabhängig im Hintergrund ermittelt.
 ## Installation
 
 ```sh
-sudo apt install ./nemo-dateivorschau-plus_2.13.0_amd64.deb
+sudo apt install ./nemo-dateivorschau-plus_2.14.0_amd64.deb
 nemo -q
 ```
 
-Nemo danach erneut öffnen. Bedienung und Grenzen: [README.txt](README.txt),
+Bei Thunar stattdessen `thunar -q` ausführen. Den Dateimanager danach erneut öffnen. Bedienung und Grenzen: [README.txt](README.txt),
 Formate: [FORMATE.txt](FORMATE.txt).
 
 ## Bauen
 
-Ziel: Linux Mint/Ubuntu/Debian auf AMD64 mit GTK 3 und Nemo 6.x.
-Benötigt werden `dpkg-deb` mit Zstandard-Unterstützung, Python 3, curl und
+Ziel: Linux Mint/Ubuntu/Debian auf AMD64 mit GTK 3 und Nemo 6.x bzw. Thunar 4.18/4.20 (GTK3).
+Thunar 4.18.8 wurde direkt getestet; 4.20 verwendet denselben erkannten
+Fensteraufbau, ist hier aber nicht als Laufzeit getestet. Unbekannte Aufbauten
+werden unverändert gelassen.
+Benötigt werden `dpkg-deb` mit Zstandard-Unterstützung, Python 3, ein C-Compiler (`gcc`), curl und
 sha256sum. Die Laufzeitabhängigkeiten stehen in `build.sh`.
 
 ```sh
@@ -54,19 +57,37 @@ Die Tests umfassen Metadaten, Quellen-Unverändertheit, echte Office-Dateien,
 XCF-Effekte, Archive, Fotoshow-Navigation/Wiedergabe und Hintergrundzählung.
 [TESTERGEBNISSE.txt](TESTERGEBNISSE.txt) beschreibt die Release-Prüfung.
 
-## Veröffentlichung
+## Thunar
 
-Dieses Repository enthält weder Pakete noch Runtime, Caches oder private
-Benutzerdateien. `main` und der Tag `v2.13.0` sind vorbereitet. Nach dem Anlegen
-eines eigenen öffentlichen Repositorys kann ein Remote ergänzt werden:
+Die zusätzliche Leiste verwendet denselben Decoder, Cache, Metadateneditor und
+alle Formate wie Nemo. Sie folgt der aktiven Dateiauswahl, auch in Tabs und
+geteilten Ansichten. Eigenes Vorschau-Symbol und Zahnrad in der Werkzeugleiste;
+Breite am Trenner ziehen. Die Einstellungen werden mit Nemo geteilt.
+Thunars eingebaute einfache Bildvorschau kann unabhängig über Ansicht deaktiviert
+werden, falls sie ebenfalls eingeschaltet ist. Unterstützt werden lokale Dateien.
+
+Ein kleiner residenter Thunarx-Loader initialisiert die gemeinsame Python-
+Vorschau im Thunar-Prozess. Die native Auswahl wird aus der GList-Eigenschaft
+in Datei-URIs umgesetzt; es gibt kein globales Accessibility-Polling. Das Paket
+benötigt kein `thunarx-python` und verändert keine vorhandenen Thunar-Dateien.
+Die Python-Laufzeitabhängigkeit wird beim Paketbau ermittelt.
+
+Reproduzierbarer Test mit echtem Thunar und isoliertem Profil/Display:
 
 ```sh
-git remote add origin <REPOSITORY-URL>
-git push -u origin main --follow-tags
+/usr/bin/python3 thunar/test_integration.py
 ```
 
-Pakete und Prüfsummen als Release-Anhänge hochladen, nicht in die Git-Historie.
-Die Veröffentlichung erfolgt unter `WillibaldSoft/nemo-dateivorschau-plus`.
+Dieser Test verwendet ausschließlich eine temporäre Kopie der Thunarx-
+Bibliothek zur Umleitung des Plugin-Suchpfads, ohne Systeminstallation.
+
+## Veröffentlichung
+
+Das öffentliche Repository liegt unter
+[WillibaldSoft/nemo-dateivorschau-plus](https://github.com/WillibaldSoft/nemo-dateivorschau-plus).
+Pakete und Prüfsummen gehören als Release-Anhänge außerhalb der Git-Historie.
+Version 2.14.0 wird lokal als neues Paket gebaut; die bestehende Veröffentlichung
+2.13.0 bleibt bestehen.
 
 ## Lizenz
 
@@ -79,4 +100,4 @@ Bezugsquellen und Prüfsummen: [GIMP3-RUNTIME.txt](GIMP3-RUNTIME.txt).
 Das neue Paket ersetzt `bilddetails` über die Paketverwaltung. Die bisherigen
 Einstellungen und Caches unter dem alten internen Namen bleiben verwendbar.
 Der Befehl `bilddetails` bleibt als Kompatibilitätsalias erhalten. Nach dem
-Update Nemo vollständig neu starten.
+Update den verwendeten Dateimanager vollständig neu starten.

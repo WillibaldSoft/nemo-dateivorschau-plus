@@ -12,15 +12,15 @@ cat > "$root/DEBIAN/control" <<'EOF'
 Package: nemo-dateivorschau-plus
 Conflicts: bilddetails
 Replaces: bilddetails
-Provides: bilddetails (= 2.13.0)
-Version: 2.13.0
+Provides: bilddetails (= 2.14.0)
+Version: 2.14.0
 Section: graphics
 Priority: optional
 Architecture: amd64
-Depends: python3 (>= 3.8), python3-gi, gir1.2-gtk-3.0, libimage-exiftool-perl, nemo-python, gir1.2-gdkpixbuf-2.0, python3-gi-cairo, poppler-utils, libreoffice-writer, libreoffice-calc, python3-uno, libreoffice-impress, libreoffice-draw, libreoffice-math, libarchive-tools, ffmpeg
-Recommends: nemo
+Depends: python3 (>= 3.8), python3-gi, gir1.2-gtk-3.0, libimage-exiftool-perl, nemo-python, @PYTHON_RUNTIME@, gir1.2-gdkpixbuf-2.0, python3-gi-cairo, poppler-utils, libreoffice-writer, libreoffice-calc, python3-uno, libreoffice-impress, libreoffice-draw, libreoffice-math, libarchive-tools, ffmpeg
+Recommends: nemo | thunar
 Maintainer: Nemo Dateivorschau Plus <nemo-dateivorschau-plus@localhost>
-Description: Datei-Vorschau und Bildmetadateneditor fuer Nemo
+Description: Datei-Vorschau und Bildmetadateneditor fuer Nemo und Thunar
  Grafischer GTK-Viewer und Editor fuer Kamera-, Objektiv-, Aufnahme-,
  EXIF- und XMP-Daten. RAW-Bilder werden ueber XMP-Begleitdateien bearbeitet.
  Rechte Vorschau fuer Bilder, Office, PDF, EPUB, Text, Medien und Archive.
@@ -33,6 +33,13 @@ EOF
 ln -s nemo-dateivorschau-plus "$root/usr/bin/bilddetails"
 cp assets/*.svg "$root/usr/share/icons/hicolor/scalable/actions/"
 cp src/*.py "$root/usr/lib/nemo-dateivorschau-plus/"
+python_soname=$(/usr/bin/python3 -c 'import sysconfig; print(sysconfig.get_config_var("INSTSONAME"))')
+python_library=$(/usr/bin/python3 -c 'import sysconfig; print(sysconfig.get_config_var("LIBDIR"))')/$python_soname
+python_runtime=$(dpkg-query -S "$python_library" | head -n 1 | cut -d: -f1)
+test -n "$python_runtime"
+sed -i "s/@PYTHON_RUNTIME@/$python_runtime/" "$root/DEBIAN/control"
+mkdir -p "$root/usr/lib/x86_64-linux-gnu/thunarx-3"
+cc -shared -fPIC -O2 -Wall -Wextra -Werror -DPYTHON_SONAME="\"$python_soname\"" thunar/loader.c -o "$root/usr/lib/x86_64-linux-gnu/thunarx-3/dateivorschau-plus.so" -ldl
 cp nemo/bilddetails_preview.py "$root/usr/share/nemo-python/extensions/"
 cat > "$root/usr/share/applications/nemo-dateivorschau-plus.desktop" <<'EOF'
 [Desktop Entry]
@@ -75,7 +82,7 @@ chmod 755 "$root/usr/bin/nemo-dateivorschau-plus"
 find "$root" -type d -exec chmod 755 {} +
 installed_size=$(du -sk "$root/usr" | cut -f1)
 printf 'Installed-Size: %s\n' "$installed_size" >> "$root/DEBIAN/control"
-dpkg-deb --threads-max=2 -Zzstd -z6 --root-owner-group --build "$root" "$out/nemo-dateivorschau-plus_2.13.0_amd64.deb"
+dpkg-deb --threads-max=2 -Zzstd -z6 --root-owner-group --build "$root" "$out/nemo-dateivorschau-plus_2.14.0_amd64.deb"
 
-cp installieren.sh "$out/Nemo-Dateivorschau-Plus-2.13-installieren.sh"
-chmod 755 "$out/Nemo-Dateivorschau-Plus-2.13-installieren.sh"
+cp installieren.sh "$out/Nemo-Dateivorschau-Plus-2.14-installieren.sh"
+chmod 755 "$out/Nemo-Dateivorschau-Plus-2.14-installieren.sh"
