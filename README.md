@@ -18,6 +18,21 @@ nemo -q
 Bei Thunar stattdessen `thunar -q` ausführen. Den Dateimanager danach erneut öffnen. Bedienung und Grenzen: [README.txt](README.txt),
 Formate: [FORMATE.txt](FORMATE.txt).
 
+## Offline installieren (Linux Mint 22.x / AMD64)
+
+Das vollständige Offline-Archiv aus dem Release auf den Ziel-PC kopieren und
+entpacken, dann im entpackten Ordner ausführen:
+
+```sh
+bash Offline-installieren.sh
+```
+
+Ohne Internet; 447 Basispakete einschließlich Hauptpaket und 24 zusätzliche
+Pakete für bereits vorhandenes LibreOffice Still 25.8. Nicht für Mint 21,
+LMDE oder ARM. SHA256-Prüfung und lokale APT-Auflösung sind integriert.
+Nur prüfen: `bash Offline-installieren.sh --check`.
+Einzelheiten und Grenzen: [Offline-Anleitung](offline/LIESMICH.txt).
+
 ## Bauen
 
 Ziel: Linux Mint/Ubuntu/Debian auf AMD64 mit GTK 3 und Nemo 6.x bzw. Thunar 4.18/4.20 (GTK3).
@@ -86,8 +101,8 @@ Bibliothek zur Umleitung des Plugin-Suchpfads, ohne Systeminstallation.
 Das öffentliche Repository liegt unter
 [WillibaldSoft/nemo-dateivorschau-plus](https://github.com/WillibaldSoft/nemo-dateivorschau-plus).
 Pakete und Prüfsummen gehören als Release-Anhänge außerhalb der Git-Historie.
-Version 2.14.0 wird lokal als neues Paket gebaut; die bestehende Veröffentlichung
-2.13.0 bleibt bestehen.
+Version 2.14.0 mit normalem `.deb`, Installationshelfer und vollständiger
+Offline-Ausgabe: [GitHub-Release](https://github.com/WillibaldSoft/nemo-dateivorschau-plus/releases/tag/v2.14.0).
 
 ## Lizenz
 
