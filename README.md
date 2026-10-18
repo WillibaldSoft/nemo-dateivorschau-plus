@@ -11,7 +11,7 @@ Bild unabhängig im Hintergrund ermittelt.
 ## Installation
 
 ```sh
-sudo apt install ./nemo-dateivorschau-plus_2.14.1_amd64.deb
+sudo apt install ./nemo-dateivorschau-plus_2.14.2_amd64.deb
 nemo -q
 ```
 
@@ -28,7 +28,9 @@ bash Offline-installieren.sh
 ```
 
 Ohne Internet; 447 Basispakete einschließlich Hauptpaket und 24 zusätzliche
-Pakete für bereits vorhandenes LibreOffice Still 25.8. Nicht für Mint 21,
+Pakete für bereits vorhandenes LibreOffice Still 25.8 sowie ein getrennter
+Bestand für vorhandenes LibreOffice 26.2.5.2 aus Noble-Backports (automatisch
+erkannt, einschließlich Math und seiner Oberfläche). Nicht für Mint 21,
 LMDE oder ARM. SHA256-Prüfung und lokale APT-Auflösung sind integriert.
 Nur prüfen: `bash Offline-installieren.sh --check`.
 Einzelheiten und Grenzen: [Offline-Anleitung](offline/LIESMICH.txt).
@@ -101,8 +103,8 @@ Bibliothek zur Umleitung des Plugin-Suchpfads, ohne Systeminstallation.
 Das öffentliche Repository liegt unter
 [WillibaldSoft/nemo-dateivorschau-plus](https://github.com/WillibaldSoft/nemo-dateivorschau-plus).
 Pakete und Prüfsummen gehören als Release-Anhänge außerhalb der Git-Historie.
-Version 2.14.1 mit normalem `.deb`, Installationshelfer und vollständiger
-Offline-Ausgabe: [GitHub-Release](https://github.com/WillibaldSoft/nemo-dateivorschau-plus/releases/tag/v2.14.1).
+Version 2.14.2 mit normalem `.deb`, Installationshelfer und vollständiger
+Offline-Ausgabe: [GitHub-Release](https://github.com/WillibaldSoft/nemo-dateivorschau-plus/releases/tag/v2.14.2).
 
 ## Lizenz
 

@@ -1,9 +1,9 @@
-NEMO DATEIVORSCHAU PLUS 2.14.1 – Nemo-/Thunar-Dateivorschau und Bildmetadateneditor
+NEMO DATEIVORSCHAU PLUS 2.14.2 – Nemo-/Thunar-Dateivorschau und Bildmetadateneditor
 
 INSTALLATION (AMD64 / Linux Mint Cinnamon, Ubuntu/Debian mit Nemo oder Thunar)
-    sudo apt install ./nemo-dateivorschau-plus_2.14.1_amd64.deb
+    sudo apt install ./nemo-dateivorschau-plus_2.14.2_amd64.deb
 Alternativ Installationshelfer neben dem Paket speichern und ausführen:
-    sh Nemo-Dateivorschau-Plus-2.14.1-installieren.sh
+    sh Nemo-Dateivorschau-Plus-2.14.2-installieren.sh
 Nur Abhängigkeiten prüfen: gleicher Aufruf mit --check.
 Nach Abschluss offener Dateioperationen Nemo mit nemo -q beenden und erneut
 öffnen. Bei Thunar stattdessen thunar -q verwenden und Thunar neu öffnen. Ältere Bilddetails-Versionen werden aktualisiert.
@@ -80,3 +80,8 @@ Vorschau-Symbol und Einstellungen. Breite am rechten Trenner verstellen.
 Lokale Dateien; unbekannte Fensteraufbauten werden nicht verändert.
 Thunars eigene einfache Bildvorschau lässt sich im Ansicht-Menü abschalten.
 Die gemeinsamen Start-/Breiteneinstellungen gelten für Nemo und Thunar.
+
+OFFLINE 2.14.2
+Die Offline-Ausgabe erkennt zusätzlich vorhandenes LibreOffice 26.2 und
+verwendet den passenden getrennten Noble-Backports-Bestand 26.2.5.2.
+Dadurch lassen sich Math und dessen Oberfläche offline ergänzen.

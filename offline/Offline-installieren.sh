@@ -33,7 +33,7 @@ fi
 mkdir -p "$scratch/lists/partial" "$scratch/archives/partial" "$scratch/empty"
 bundle_uri=$(/usr/bin/python3 -c 'from pathlib import Path; import sys; print(Path(sys.argv[1]).as_uri())' "$bundle_dir")
 printf 'deb [trusted=yes] %s ./\n' "$bundle_uri" > "$scratch/sources.list"
-# The optional repository is enabled only for an already installed Still 25.8.
+# Optional repositories follow the installed Office branch.
 # Standard Mint installations keep the official Noble LibreOffice branch.
 office_version=$(dpkg-query -W -f='${Version}' libreoffice-core 2>/dev/null || true)
 if [[ "$office_version" == 4:25.8* ]]; then
@@ -43,9 +43,16 @@ if [[ "$office_version" == 4:25.8* ]]; then
     printf 'deb [trusted=yes] %s/office-still ./\n' "$bundle_uri" >> "$scratch/sources.list"
     echo 'Vorhandenes LibreOffice 25.8 erkannt: passende Still-Ergänzung aktiviert.'
 fi
+if [[ "$office_version" == 4:26.2* ]]; then
+    if [[ ! -f "$bundle_dir/office-26/Packages" ]]; then
+        echo 'Ergänzung für vorhandenes LibreOffice 26.2 fehlt.' >&2; exit 1
+    fi
+    printf 'deb [trusted=yes] %s/office-26 ./\n' "$bundle_uri" >> "$scratch/sources.list"
+    echo 'Vorhandenes LibreOffice 26.2 erkannt: passende Backports-Ergänzung aktiviert.'
+fi
 # Populate the private APT cache. --no-download prohibits fetching anything;
 # the only configured repository is the checksum-verified local bundle.
-for package in "$bundle_dir"/pakete/*.deb "$bundle_dir"/office-still/pakete/*.deb; do
+for package in "$bundle_dir"/pakete/*.deb "$bundle_dir"/office-still/pakete/*.deb "$bundle_dir"/office-26/pakete/*.deb; do
     [[ -f "$package" ]] || continue
     ln -s "$package" "$scratch/archives/$(basename "$package")"
 done
@@ -66,7 +73,7 @@ apt_options=(
 touch "$scratch/empty-preferences" "$scratch/empty-apt.conf"
 apt-get "${apt_options[@]}" update
 # Explicit requests also repair a previous dpkg-only, unconfigured install.
-install_requests=(nemo-dateivorschau-plus=2.14.1 libreoffice-math)
+install_requests=(nemo-dateivorschau-plus=2.14.2 libreoffice-math)
 legacy_status=$(dpkg-query -W -f='${db:Status-Status}' bilddetails 2>/dev/null || true)
 case "$legacy_status" in
     installed|unpacked|half-configured|half-installed|triggers-pending|triggers-awaited)

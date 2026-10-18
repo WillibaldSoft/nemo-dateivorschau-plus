@@ -12,8 +12,8 @@ cat > "$root/DEBIAN/control" <<'EOF'
 Package: nemo-dateivorschau-plus
 Conflicts: bilddetails
 Replaces: bilddetails
-Provides: bilddetails (= 2.14.1)
-Version: 2.14.1
+Provides: bilddetails (= 2.14.2)
+Version: 2.14.2
 Section: graphics
 Priority: optional
 Architecture: amd64
@@ -71,7 +71,7 @@ EOF
 cp LICENSE README.txt FORMATE.txt "$root/usr/share/doc/nemo-dateivorschau-plus/"
 build_utc=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
 source_commit=$(git rev-parse HEAD 2>/dev/null || printf 'source-archive')
-printf 'Version: 2.14.1\nBuild-UTC: %s\nSource-Commit: %s\n' "$build_utc" "$source_commit" > "$root/usr/share/doc/nemo-dateivorschau-plus/BUILD-INFO.txt"
+printf 'Version: 2.14.2\nBuild-UTC: %s\nSource-Commit: %s\n' "$build_utc" "$source_commit" > "$root/usr/share/doc/nemo-dateivorschau-plus/BUILD-INFO.txt"
 runtime=${BILDDETAILS_BUILD_GIMP3:-"$PWD/../gimp32-runtime/squashfs-root"}
 if [ ! -x "$runtime/bilddetails-console" ]; then
     echo "Geprüfte GIMP-3-Runtime fehlt: $runtime" >&2
@@ -85,7 +85,7 @@ chmod 755 "$root/usr/bin/nemo-dateivorschau-plus"
 find "$root" -type d -exec chmod 755 {} +
 installed_size=$(du -sk "$root/usr" | cut -f1)
 printf 'Installed-Size: %s\n' "$installed_size" >> "$root/DEBIAN/control"
-dpkg-deb --threads-max=2 -Zzstd -z6 --root-owner-group --build "$root" "$out/nemo-dateivorschau-plus_2.14.1_amd64.deb"
+dpkg-deb --threads-max=2 -Zzstd -z6 --root-owner-group --build "$root" "$out/nemo-dateivorschau-plus_2.14.2_amd64.deb"
 
-cp installieren.sh "$out/Nemo-Dateivorschau-Plus-2.14.1-installieren.sh"
-chmod 755 "$out/Nemo-Dateivorschau-Plus-2.14.1-installieren.sh"
+cp installieren.sh "$out/Nemo-Dateivorschau-Plus-2.14.2-installieren.sh"
+chmod 755 "$out/Nemo-Dateivorschau-Plus-2.14.2-installieren.sh"

@@ -1,4 +1,4 @@
-NEMO DATEIVORSCHAU PLUS 2.14.1 – OFFLINE-AUSGABE
+NEMO DATEIVORSCHAU PLUS 2.14.2 – OFFLINE-AUSGABE
 Linux Mint 22.x / Ubuntu-Noble-Basis / AMD64 (x86-64)
 Erstellt am 18.10.2026. Nicht für Mint 21, LMDE oder ARM.
 
@@ -27,6 +27,10 @@ Python/GTK, ExifTool, FFmpeg, Poppler, libarchive-tools und nemo-python.
 Die private GIMP-3-Runtime befindet sich bereits im Haupt-.deb.
 24 zusätzliche LibreOffice-Still-Pakete für vorhandenes LibreOffice 25.8;
 diese Ergänzung wird nur bei bereits installiertem 25.8 aktiviert.
+Zusätzlicher getrennter Bestand für bereits installiertes LibreOffice
+26.2.5.2 (4:26.2.5.2-0ubuntu0.26.04.1~bpo24.04.1) aus Noble-Backports,
+einschließlich Math und libreoffice-uiconfig-math. Automatische Auswahl bei
+installiertem 26.2; andere Office-Reihen werden dadurch nicht umgestellt.
 Normale Mint-Installationen verwenden die offizielle Noble-Office-Reihe 24.2.
 Keine PPA wird am Ziel-PC eingerichtet. Keine bestehende Paketquelle geändert.
 
@@ -52,11 +56,14 @@ von Linux Mint. Optionale APT-Recommends/Suggests sind nicht Teil des Satzes.
 Unbekannte native Dateimanager-Fensteraufbauten bleiben unberührt.
 
 PRÜFUNG
-Vier Offline-Auflösungs-/Cacheprüfungen ohne Systeminstallation bestanden:
+Sechs Offline-Auflösungs-/Cacheprüfungen ohne Systeminstallation bestanden:
 - Leere Paketdatenbank, ausschließlich offizieller Noble-Bestand.
 - Leere Paketdatenbank plus LibreOffice-Still-Ergänzung.
+- Leere Paketdatenbank plus LibreOffice-26.2-Ergänzung.
 - Vorhandene Mint-Paketdatenbank mit gezielt entferntem libreoffice-math.
 - Bereits entpacktes, unkonfiguriertes Hauptpaket bei fehlendem Math-Modul.
+- Nachgebildeter installierter 26.2-Bestand mit fehlendem Math samt Oberfläche;
+  die bereits vorhandenen Office-Module bleiben dabei unverändert.
 Jeweils APT-Simulation und --download-only --no-download ausschließlich mit
 lokalen Paketen. Zusätzlich Installer --check am Build-PC.
 Keine Installation auf dem tatsächlichen zweiten PC oder einer Mint-VM erfolgt.
@@ -65,10 +72,11 @@ bestanden, siehe Quellcode-Repository.
 
 QUELLEN UND LIZENZEN
 Basispakete: offizielle signierte Ubuntu-Noble-/Updates-/Security-Repositories.
+26.2-Ergänzung: offizielle signierte Ubuntu-Noble-Backports.
 Still-Ergänzung: signiertes libreoffice/libreoffice-still-PPA für Noble.
 Jedes .deb enthält seine eigene Lizenz-/Copyright-Dokumentation; die Pakete
 bleiben unverändert. Eigener Installer: GPL-3.0-or-later.
 Anwendungsquellcode: https://github.com/WillibaldSoft/nemo-dateivorschau-plus
-Lokaler vollständiger Quellstand 2.14.1 liegt separat als Quellcodearchiv vor;
+Lokaler vollständiger Quellstand 2.14.2 liegt separat als Quellcodearchiv vor;
 die öffentliche GitHub-Veröffentlichung kann einen älteren Stand zeigen.
 Die Paketliste steht in PAKETLISTE.tsv. SHA256SUMS prüft den entpackten Inhalt.

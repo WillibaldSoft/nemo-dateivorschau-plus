@@ -1,5 +1,13 @@
 # Änderungen
 
+## 2.14.2
+
+Offline-Ergänzung für bereits installiertes LibreOffice 26.2.5.2 aus
+Noble-Backports. Automatische Auswahl des getrennten 26.2-Paketbestands;
+Math und seine Oberfläche passen zu vorhandenem Office 26.2. Standard-
+Office 24.2 und vorhandenes Still 25.8 bleiben unterstützt. Neue Paket- und
+Offline-Ausgabe mit Versionsstand 2.14.2; Vorschaufunktionen unverändert.
+
 ## 2.14.1
 
 Frischer Paketbau mit eindeutigem Versionsstand 2.14.1 und BUILD-INFO.txt
