@@ -1,3 +1,8 @@
+VERSION 2.14.1
+Neuer Paketbau; Versions-, Build-Metadaten-, Abhängigkeits- und
+Offline-Auflösungsprüfungen werden für den neuen Paketstand ausgeführt.
+Die Vorschauimplementierung ist unverändert gegenüber 2.14.0.
+
 NEMO DATEIVORSCHAU PLUS 2.14.0 – PRÜFUNG
 
 48 bestehende Funktionstests in 43,330 Sekunden vollständig bestanden.

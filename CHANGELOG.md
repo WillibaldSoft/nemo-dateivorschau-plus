@@ -1,5 +1,13 @@
 # Änderungen
 
+## 2.14.1
+
+Frischer Paketbau mit eindeutigem Versionsstand 2.14.1 und BUILD-INFO.txt
+(UTC-Bauzeit und Quellcode-Commit) im Paket. Neuer normaler Installationshelfer
+und neu gepackte vollständige Offline-Ausgabe für Mint 22.x AMD64 mit exakt
+diesem Hauptpaket, lokaler APT-Auflösung und Wiederherstellung eines nur
+entpackten Pakets. Die Vorschaufunktionen bleiben auf dem Stand von 2.14.0.
+
 ## 2.14.0
 
 Zusätzliche rechte Vorschauleiste in Thunar mit gemeinsamem Decoder, Cache und

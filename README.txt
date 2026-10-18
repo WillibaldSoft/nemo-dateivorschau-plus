@@ -1,9 +1,9 @@
-NEMO DATEIVORSCHAU PLUS 2.14.0 – Nemo-/Thunar-Dateivorschau und Bildmetadateneditor
+NEMO DATEIVORSCHAU PLUS 2.14.1 – Nemo-/Thunar-Dateivorschau und Bildmetadateneditor
 
 INSTALLATION (AMD64 / Linux Mint Cinnamon, Ubuntu/Debian mit Nemo oder Thunar)
-    sudo apt install ./nemo-dateivorschau-plus_2.14.0_amd64.deb
+    sudo apt install ./nemo-dateivorschau-plus_2.14.1_amd64.deb
 Alternativ Installationshelfer neben dem Paket speichern und ausführen:
-    sh Nemo-Dateivorschau-Plus-2.14-installieren.sh
+    sh Nemo-Dateivorschau-Plus-2.14.1-installieren.sh
 Nur Abhängigkeiten prüfen: gleicher Aufruf mit --check.
 Nach Abschluss offener Dateioperationen Nemo mit nemo -q beenden und erneut
 öffnen. Bei Thunar stattdessen thunar -q verwenden und Thunar neu öffnen. Ältere Bilddetails-Versionen werden aktualisiert.

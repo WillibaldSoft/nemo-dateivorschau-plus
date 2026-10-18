@@ -1,4 +1,4 @@
-NEMO DATEIVORSCHAU PLUS 2.14.0 – OFFLINE-AUSGABE
+NEMO DATEIVORSCHAU PLUS 2.14.1 – OFFLINE-AUSGABE
 Linux Mint 22.x / Ubuntu-Noble-Basis / AMD64 (x86-64)
 Erstellt am 18.10.2026. Nicht für Mint 21, LMDE oder ARM.
 
@@ -69,6 +69,6 @@ Still-Ergänzung: signiertes libreoffice/libreoffice-still-PPA für Noble.
 Jedes .deb enthält seine eigene Lizenz-/Copyright-Dokumentation; die Pakete
 bleiben unverändert. Eigener Installer: GPL-3.0-or-later.
 Anwendungsquellcode: https://github.com/WillibaldSoft/nemo-dateivorschau-plus
-Lokaler vollständiger Quellstand 2.14.0 liegt separat als Quellcodearchiv vor;
+Lokaler vollständiger Quellstand 2.14.1 liegt separat als Quellcodearchiv vor;
 die öffentliche GitHub-Veröffentlichung kann einen älteren Stand zeigen.
 Die Paketliste steht in PAKETLISTE.tsv. SHA256SUMS prüft den entpackten Inhalt.

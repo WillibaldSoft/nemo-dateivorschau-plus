@@ -66,7 +66,7 @@ apt_options=(
 touch "$scratch/empty-preferences" "$scratch/empty-apt.conf"
 apt-get "${apt_options[@]}" update
 # Explicit requests also repair a previous dpkg-only, unconfigured install.
-install_requests=(nemo-dateivorschau-plus=2.14.0 libreoffice-math)
+install_requests=(nemo-dateivorschau-plus=2.14.1 libreoffice-math)
 legacy_status=$(dpkg-query -W -f='${db:Status-Status}' bilddetails 2>/dev/null || true)
 case "$legacy_status" in
     installed|unpacked|half-configured|half-installed|triggers-pending|triggers-awaited)

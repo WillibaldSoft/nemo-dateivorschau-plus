@@ -1,4 +1,4 @@
-DATEIVORSCHAU 2.14.0 – FORMATÜBERSICHT
+DATEIVORSCHAU 2.14.1 – FORMATÜBERSICHT
 
 Die Vorschau befindet sich rechts in Nemo. Breite per Trenner, Sichtbarkeit
 per Symbol. Das Öffnen-Symbol startet bei Bedarf die zuständige Anwendung.

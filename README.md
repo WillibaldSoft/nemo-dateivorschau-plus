@@ -11,7 +11,7 @@ Bild unabhängig im Hintergrund ermittelt.
 ## Installation
 
 ```sh
-sudo apt install ./nemo-dateivorschau-plus_2.14.0_amd64.deb
+sudo apt install ./nemo-dateivorschau-plus_2.14.1_amd64.deb
 nemo -q
 ```
 
@@ -101,8 +101,8 @@ Bibliothek zur Umleitung des Plugin-Suchpfads, ohne Systeminstallation.
 Das öffentliche Repository liegt unter
 [WillibaldSoft/nemo-dateivorschau-plus](https://github.com/WillibaldSoft/nemo-dateivorschau-plus).
 Pakete und Prüfsummen gehören als Release-Anhänge außerhalb der Git-Historie.
-Version 2.14.0 mit normalem `.deb`, Installationshelfer und vollständiger
-Offline-Ausgabe: [GitHub-Release](https://github.com/WillibaldSoft/nemo-dateivorschau-plus/releases/tag/v2.14.0).
+Version 2.14.1 mit normalem `.deb`, Installationshelfer und vollständiger
+Offline-Ausgabe: [GitHub-Release](https://github.com/WillibaldSoft/nemo-dateivorschau-plus/releases/tag/v2.14.1).
 
 ## Lizenz
 
