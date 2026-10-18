@@ -1,0 +1,74 @@
+NEMO DATEIVORSCHAU PLUS 2.14.0 – OFFLINE-AUSGABE
+Linux Mint 22.x / Ubuntu-Noble-Basis / AMD64 (x86-64)
+Erstellt am 18.10.2026. Nicht für Mint 21, LMDE oder ARM.
+
+AUF DEN ANDEREN PC ÜBERTRAGEN
+1. Das vollständige .tar.gz-Archiv auf einen USB-Stick kopieren.
+2. Auf dem Ziel-PC in einen lokalen Ordner vollständig entpacken.
+3. In diesem entpackten Ordner ein Terminal öffnen und ausführen:
+
+   bash Offline-installieren.sh
+
+Das Administratorpasswort wird über sudo abgefragt. Internet ist nicht nötig.
+Alle Unterordner zusammenlassen. Nicht nur das einzelne Haupt-.deb kopieren.
+Nemo/Thunar nach Abschluss offener Dateioperationen vollständig neu starten:
+   nemo -q
+bzw.
+   thunar -q
+
+NUR PRÜFEN, OHNE INSTALLATION
+   bash Offline-installieren.sh --check
+
+ENTHALTEN
+447 Basispakete: Hauptpaket und alle durch APT rekursiv aufgelösten Depends/
+Pre-Depends, unabhängig von den auf dem Build-PC vorhandenen Paketen.
+Enthalten sind insbesondere libreoffice-math, Writer/Calc/Impress/Draw,
+Python/GTK, ExifTool, FFmpeg, Poppler, libarchive-tools und nemo-python.
+Die private GIMP-3-Runtime befindet sich bereits im Haupt-.deb.
+24 zusätzliche LibreOffice-Still-Pakete für vorhandenes LibreOffice 25.8;
+diese Ergänzung wird nur bei bereits installiertem 25.8 aktiviert.
+Normale Mint-Installationen verwenden die offizielle Noble-Office-Reihe 24.2.
+Keine PPA wird am Ziel-PC eingerichtet. Keine bestehende Paketquelle geändert.
+
+INSTALLATIONSVERHALTEN
+Der Installer prüft OS, Architektur und sämtliche SHA256-Prüfsummen. Er nutzt
+nur den lokalen Paketbestand; APT wird mit --no-download ausgeführt. Ein eigener
+temporärer APT-Katalog/Cache verhindert Downloads aus normalen Paketquellen.
+Passende vorhandene Pakete werden weiterverwendet. Fehlendes wird installiert;
+notwendige Versionsangleichungen zeigt APT vor der Bestätigung an. Ein vorher
+nur entpacktes, unkonfiguriertes Hauptpaket kann dabei fertig eingerichtet
+werden. Das alte Paket bilddetails wird durch den Nachfolger ersetzt.
+Andere Paketentfernungen und erforderliche Rückstufungen führen zum Abbruch.
+Kein 'dpkg -i pakete/*.deb' ausführen: Das würde unnötig Systempakete ersetzen.
+
+GRENZEN
+Ziel ist ein funktionsfähiges Linux Mint 22.x mit den üblichen Systemwerkzeugen
+bash, sudo, dpkg, apt-get, sha256sum, Python 3 und tar/Archivverwaltung.
+Beliebige Fremdquellen, andere LibreOffice-Hauptversionen, Paket-Holds oder
+anderweitig beschädigte Paketbestände sind nicht pauschal abgedeckt; bei nicht
+auflösbaren Konflikten bricht die Vorprüfung ab, ohne eine Installation zu
+starten. Es erfolgt weder ein Distributionsupgrade noch eine Neuinstallation
+von Linux Mint. Optionale APT-Recommends/Suggests sind nicht Teil des Satzes.
+Unbekannte native Dateimanager-Fensteraufbauten bleiben unberührt.
+
+PRÜFUNG
+Vier Offline-Auflösungs-/Cacheprüfungen ohne Systeminstallation bestanden:
+- Leere Paketdatenbank, ausschließlich offizieller Noble-Bestand.
+- Leere Paketdatenbank plus LibreOffice-Still-Ergänzung.
+- Vorhandene Mint-Paketdatenbank mit gezielt entferntem libreoffice-math.
+- Bereits entpacktes, unkonfiguriertes Hauptpaket bei fehlendem Math-Modul.
+Jeweils APT-Simulation und --download-only --no-download ausschließlich mit
+lokalen Paketen. Zusätzlich Installer --check am Build-PC.
+Keine Installation auf dem tatsächlichen zweiten PC oder einer Mint-VM erfolgt.
+Die zugrunde liegende Anwendung: 48 Funktionstests und echter Thunar-Test
+bestanden, siehe Quellcode-Repository.
+
+QUELLEN UND LIZENZEN
+Basispakete: offizielle signierte Ubuntu-Noble-/Updates-/Security-Repositories.
+Still-Ergänzung: signiertes libreoffice/libreoffice-still-PPA für Noble.
+Jedes .deb enthält seine eigene Lizenz-/Copyright-Dokumentation; die Pakete
+bleiben unverändert. Eigener Installer: GPL-3.0-or-later.
+Anwendungsquellcode: https://github.com/WillibaldSoft/nemo-dateivorschau-plus
+Lokaler vollständiger Quellstand 2.14.0 liegt separat als Quellcodearchiv vor;
+die öffentliche GitHub-Veröffentlichung kann einen älteren Stand zeigen.
+Die Paketliste steht in PAKETLISTE.tsv. SHA256SUMS prüft den entpackten Inhalt.
